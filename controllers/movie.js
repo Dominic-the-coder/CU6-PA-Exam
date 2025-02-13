@@ -10,7 +10,7 @@
 const Movie = require("../models/movie");
 
 const getMovies = async () => {
-  const movies = await Movie.find();
+const movies = await Movie.find().populate("director").populate("genre");
   return movies;
 };
 
